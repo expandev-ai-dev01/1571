@@ -1,8 +1,9 @@
 import { Router } from 'express';
+import * as recordController from '@/api/v1/internal/record/controller';
 
 const router = Router();
 
-// Internal authenticated routes will be added here by feature implementations
-// Example: router.use('/records', recordsController);
+// Record routes
+router.post('/record', recordController.postHandler);
 
 export default router;

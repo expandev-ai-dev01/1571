@@ -4,6 +4,7 @@ import { RootLayout } from '@/pages/layouts/RootLayout';
 import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const RecordCreatePage = lazy(() => import('@/pages/RecordCreate'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -22,6 +23,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'records/create',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <RecordCreatePage />
           </Suspense>
         ),
       },
